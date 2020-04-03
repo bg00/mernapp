@@ -1,11 +1,11 @@
-//Make sure to import it outside of module.exports to have it accessible through out file.
+const mongoose = require("mongoose");
 const Product = require("../models/product");
 module.exports = {
   readAllProducts(req, res) {
     //When using mongoose can use a callback or a use a exec method to catch and respond to errors.
     Product.find({}).exec((err, products) => {
       if (err) console.log("Get Product Mongoose Error------------------", err);
-      console.log("products-------------", products);
+      // console.log('products-------------', products);
       res.status(200).send(products);
     });
   },

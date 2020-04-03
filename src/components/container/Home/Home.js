@@ -26,6 +26,7 @@ export default class Home extends Component {
       .then(res => {
         //always have console.logs for debugging
         console.log("res.data products-----------", res.data);
+        console.log(res.headers);
         /////Set your loading to false, and products to the res.data, since we are doing res.send in our backend.
         this.setState({ products: res.data, loading: false });
         //Each .then must have a .catch to catch errors.

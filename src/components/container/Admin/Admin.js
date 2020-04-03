@@ -6,7 +6,7 @@ import ProductForm from "../../presentational/ProductForm/ProductForm";
 //import axios to do axios calls
 import axios from "axios";
 //Have global variable set to your Cloudinary Url.
-const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/alia1997/image/upload";
+const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/bg00/image/upload";
 //import axios that will getALlProducts, createAProduct
 export default class Admin extends Component {
   //In our state we will have a name, description, price, and picture in our state which will be our values when we create a product
@@ -58,7 +58,7 @@ export default class Admin extends Component {
         }
         //Now post the image with all the credentails.
         axios
-          .post("https://api.cloudinary.com/v1_1/aa1997/image/upload", formData)
+          .post(CLOUDINARY_URL, formData)
           .then(response => {
             //Now set the state of the image using the secure url
             console.log(response);
@@ -93,8 +93,15 @@ export default class Admin extends Component {
       <div className="admin container">
         <h2>Admin</h2>
         <button onClick={() => this.createProduct()}>Create Product</button>
-        {/* <ProductForm create={this.createProduct} handleName={this.handleName} handleDesciption={this.handleDesciption}
-                handlePrice={this.handlePrice} handlePictureUpload={this.handlePictureUpload} {...this.state}/> */}
+
+        <ProductForm
+          create={this.createProduct}
+          handleName={this.handleName}
+          handleDesciption={this.handleDesciption}
+          handlePrice={this.handlePrice}
+          handlePictureUpload={this.handlePictureUpload}
+          {...this.state}
+        />
         <form>
           <img src={picture} alt={name} />
           <input

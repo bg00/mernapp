@@ -4,9 +4,10 @@ const Schema = mongoose.Schema;
 //Need an id, name, description, price,
 //Id is created by default in mongodb
 const product = new Schema({
-name: String,
-description: String,
-price: Number
+  name: String,
+  description: String,
+  price: Number,
+  picture: String
 });
 
 //To create a model, use the name of the model, and the schema with the properties of the model
