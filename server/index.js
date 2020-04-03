@@ -4,7 +4,7 @@ require('dotenv').config();
 //Configure body-parser so you can retrieve values from the req.body, if not the req.body will be undefined.
 const bodyParser = require("body-parser");
 //Require the session for saving user data and giving a user a unique experience.
-const session = require('express-session');
+// const session = require('express-session');
 //Use cors for enable cross origin sharign
 const cors = require('cors');
 //
